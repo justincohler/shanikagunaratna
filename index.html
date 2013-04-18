@@ -5,14 +5,42 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
        	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-		<link href="css/smoothness/jquery-ui-1.10.1.custom.css" rel="stylesheet">
+		<link href="css/smoothness/jquery-ui-1.10.1.custom.css" rel="stylesheet"/>
+		<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="js/orangebox/css/orangebox.css" type="text/css" />
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="js/orangebox/js/orangebox.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 		<script type="text/javascript" src="jquery/jquery-ui-1.10.1.custom/js/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="jquery/jquery-ui-1.10.1.custom/js/jquery-ui-1.10.1.custom.js"></script>
 		<script type="text/javascript" src="jquery/jquery-ui-1.10.1.custom/html5gallery/html5gallery.js"></script>
 		<script type="text/javascript" src="js/menu.js"></script>
-		<script type="text/javascript" src="js/accordion.js"></script>-
+		<script type="text/javascript" src="js/accordion.js"></script>
+		<script type="text/javascript" src="js/contact.js"></script>
+		<script type="text/javascript" src="js/slider.js"></script>
+		<script type="text/javascript" src="jquery/jquery-ui-1.10.1.custom/html5gallery/html5gallery.js"></script>
+		<script type="text/javascript" src="http://github.com/malsup/media/raw/master/jquery.media.js?v0.92"></script> 
+		<script type="text/javascript" src="js/pirobox_extended/js/pirobox_extended.js"></script>
+		<script>
+			$( document ).ready(function() {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 1);
+				$('.media').media({width:600, height:750});
+				$('.icon').hover(
+					function(){
+						$(this).animate({marginTop:'-12px'},'fast')
+					},
+					function(){
+						$(this).animate({marginTop:'-14px'},'fast')
+					}
+				);
+			});
+			
+		</script>
 		<style>
 			body {
 				background-image: url(whiteBG.jpg);
@@ -25,12 +53,22 @@
     </head>
 
     <body>
+		<div class="icon">
+			<a style="z-index:15;" target="_blank" href="https://twitter.com/gunaratna">
+				<img class="socialLink" src="images/twitter.png"/>
+			</a>
+		</div>
+		<div class="icon">
+			<a style="z-index:15;" target="_blank" href="http://www.linkedin.com/pub/shanika-gunaratna/21/418/916">
+				<img class="socialLink" src="images/linkedin.png"/>
+			</a>
+		</div>
 		<div class="content">
-			<h1 class="title">Shanika Gunaratna</h1>
+			<h1 class="title">&nbsp;</h1>
 			<div class="menu">
 			<ul id="sdt_menu" class="sdt_menu">
 				<li>
-					<a href="#">
+					<a href="javascript:void(0)" onclick="AboutSlide()">
 						<img src="images/profile.jpg" alt=""/>
 						<span class="sdt_active"></span>
 						<span class="sdt_wrap">
@@ -40,8 +78,8 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<img src="images/1.jpg" alt=""/>
+					<a href="javascript:void(0)" onclick="PortfolioSlide()">
+						<img src="images/portfolio.jpg" alt=""/>
 						<span class="sdt_active"></span>
 						<span class="sdt_wrap">
 							<span class="sdt_link">Portfolio</span>
@@ -49,25 +87,14 @@
 						</span>
 					</a>
 					<div class="sdt_box">
-							<a href="#">Magazine</a>
-							<a href="#">Online</a>
-							<a href="#">Broadcast</a>
-							<a href="#">Creative Writing</a>
+							<a href="javascript:void(0)" onclick="TelevisionSlide()">Television</a>
+							<a href="javascript:void(0)" onclick="RadioSlide()">Radio</a>
+							<a href="javascript:void(0)" onclick="MagazineSlide()">Magazine</a>
 					</div>
 				</li>
 				<li>
-					<a href="#">
-						<img src="images/3.jpg" alt=""/>
-						<span class="sdt_active"></span>
-						<span class="sdt_wrap">
-							<span class="sdt_link">Inspiration</span>
-							<span class="sdt_descr">Here and There</span>
-						</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="images/4.jpg" alt=""/>
+					<a href="javascript:void(0)" onclick="PhotosSlide()">
+						<img src="images/photos.jpg" alt=""/>
 						<span class="sdt_active"></span>
 						<span class="sdt_wrap">
 							<span class="sdt_link">Photos</span>
@@ -75,88 +102,354 @@
 						</span>
 					</a>
 				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="ContactSlide()">
+						<img src="images/contact.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Contact</span>
+							<span class="sdt_descr">Leave a Note</span>
+						</span>
+					</a>
+				</li>
 
 			</ul>
 			</div>
-			<div>
-				<ul class="accordion">
-				  <div class="job-header">WTTW</div>
-				  <div class="gridcolumn">
-					  <div class="griditem" id="section1">
-						  <h3 class="accordion-header">Hadiya Pendleton's Mother Raises Her Voice<br/>
-							<span class="subtitle">WTTW's Chicago Tonight 02/28/2013</span>
-						  </h3>
-						  <li>
-							<div class="preview">
-								<a class="logo" target="_blank"  href="http://chicagotonight.wttw.com/2013/02/28/hadiya-pendleton-s-mother-raises-her-voice">
-									<img height="20px" src="images/chicago_tonight_logo.png" alt=""/>
-								</a><br/>
-								<a class="article-image" target="_blank" href="http://chicagotonight.wttw.com/2013/02/28/hadiya-pendleton-s-mother-raises-her-voice">
-									<img src="images/hadiya_pendleton.jpg" alt=""/>
+			<div id="slider-wrapper">
+				<div id="about-me" class="slide">
+					<p>
+						Shanika Gunaratna is a multimedia journalist and writer based in Chicago. She has experience producing for both TV and radio on topics ranging from education reform to poverty to foreign affairs.
+						<br/><br/>
+						Currently, she produces stories for Chicago Tonight, the Emmy-winning news show on WTTW, the most watched public television station in the country. Shanika has previously worked at WBEZ Chicago Public Radio on the award-winning foreign affairs show Worldview. She graduated from Northwestern University's Medill School of Journalism with a dual degree in journalism and international studies.
+					</p>
+					<div class="footer">
+						<div class="footer-line">&nbsp;</div>
+						<div class="created-by"><span class="created-by">Created by Justin Cohler</span></div>
+						<div class="footer-line">&nbsp;</div>
+					</div>
+				</div>
+				<div id="portfolio" class="slide">
+					<ul class="accordion">
+					  <div class="job-header" id="television">TELEVISION</div>
+					  <div class="gridcolumn">
+						  <div class="griditem" id="section1">
+							  <h3 class="accordion-header">Hadiya Pendleton's Mother Raises Her Voice<br/>
+								<span class="subtitle">WTTW's Chicago Tonight 02/28/2013</span>
+							  </h3>
+							  <li>
+								<div class="preview">
+									<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://chicagotonight.wttw.com/2013/02/28/hadiya-pendleton-s-mother-raises-her-voice">
+											<img src="images/hadiya_pendleton.jpg" alt=""/>
+											<div>
+												<img src="play.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										The mother of Hadiya Pendleton speaks out on the raw pain of losing her 15-year-old daughter, and why she's jumped headfirst into the gun control debate. 
+									</p>
+									<a class="preview-link" target="_blank" href="http://chicagotonight.wttw.com/2013/02/28/hadiya-pendleton-s-mother-raises-her-voice">Click here to watch</a>
+								</div>
+							  </li>
+						  </div>
+						  <div class="griditem" id="section4">
+							  <h3 class="accordion-header">Chapter 1: Scott Walker Vs. Public Union Employees<br/>
+								<span class="subtitle">WTTW's Chicago Tonight 10/08/2012</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://chicagotonight.wttw.com/2012/10/08/goes-janesville">
+											<img src="images/scott_walker.jpg" alt=""/>
+											<div>
+												<img src="play.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										The man who captured Wisconsin Governor Scott Walker's now famous "divide and conquer" moment on camera.  
+									</p>
+									<a class="preview-link" target="_blank" href="http://chicagotonight.wttw.com/2012/10/08/goes-janesville">Click here to watch</a>
+								 </div>
+							  </li>
+					  </div>
+					  </div>
+					  <div class="gridcolumn">
+						  <div class="griditem" id="section2">
+							  <h3 class="accordion-header">Jesse Jackson Jr.'s Dramatic Rise and Fall<br/>
+								<span class="subtitle">WTTW's Chicago Tonight 02/21/2013</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank"
+										href="http://chicagotonight.wttw.com/2013/02/21/jesse-jackson-jr-s-dramatic-rise-and-fall">
+											<img src="images/jesse_jackson.jpg" alt=""/>
+											<div>
+												<img src="play.png" alt=""/>
+											</div>
+										</a>
+								 	</div>
+									<p>
+										As Jesse Jackson Jr. and his wife plead guilty to misusing campaign funds, a closer look at the one-time power couple and their place in history.
+									</p>
+									<a class="preview-link" target="_blank" href="http://chicagotonight.wttw.com/2013/02/21/jesse-jackson-jr-s-dramatic-rise-and-fall">Click here to watch</a>
+								 </div>
+							  </li>
+						  </div>
+						  <div class="griditem" id="section5">
+							  <h3 class="accordion-header">National Wildlife Refuge Born in Illinois<br/>
+								<span class="subtitle">WTTW's Chicago Tonight 09/11/2012 </span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank"
+										href="http://chicagotonight.wttw.com/2012/09/11/national-wildlife-refuge-born-illinois">
+											<img src="images/wildlife_refuge.jpg" alt=""/>
+											<div>
+												<img src="play.png" alt=""/>
+											</div>
+										</a>
+								 	</div>
+									<p>
+										The story behind Illinois' newest national wildlife refuge -- and the local environmentalists who got the federal government to take a second look at the land around them.   
+									</p>
+									<a class="preview-link" target="_blank" href="http://chicagotonight.wttw.com/2012/09/11/national-wildlife-refuge-born-illinois">Click here to watch</a>
+								 </div>
+							  </li>
+						  </div>
+					  </div>
+					  <div class="gridcolumn">
+						  <div class="griditem" id="section3">
+							  <h3 class="accordion-header">Meet the Dream Team<br/>
+								<span class="subtitle">WTTW's Chicago Tonight 10/17/2012</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://chicagotonight.wttw.com/2012/10/17/meet-dream-team">
+											<img src="images/dream_team.jpg" alt=""/>
+											<div>
+												<img src="play.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										Undocumented students set their sights on college -- but the path forward is a messy one. 
+									</p>
+									<a class="preview-link" target="_blank" href="http://chicagotonight.wttw.com/2012/10/17/meet-dream-team">Click here to watch</a>
+								 </div>
+							  </li>
+						  </div>
+					  </div>				  
+					  <div class="job-header" id="radio">RADIO</div>
+					  <div class="gridcolumn">
+					  	  <div class="griditem" id="section6">
+							  <h3 class="accordion-header">A History in Objects<br/>
+								<span class="subtitle">WBEZ's Worldview 02/03/2012</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://www.wbez.org/episode-segments/2012-02-03/items-left-us-mexican-border-reveal-hidden-history-migration-96094">
+											<img src="images/migrant_station.jpg" alt=""/>
+											<div>
+												<img src="volume.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										Items left at the U.S.-Mexican border reveal the invisible experience of illegal migrants.
+									</p>
+									<a class="preview-link" target="_blank" href="http://www.wbez.org/episode-segments/2012-02-03/items-left-us-mexican-border-reveal-hidden-history-migration-96094">Click here to listen</a>
+								 </div>
+							  </li>
+						  </div>
+						  <div class="griditem" id="section9">
+							  <h3 class="accordion-header">E.U. Drug Ban Limits U.S. Access to Death Penalty Drugs<br/>
+								<span class="subtitle">WBEZ's Worldview 01/20/2012</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://www.wbez.org/episode-segments/2012-01-20/eu-ban-limits-us-access-death-penalty-drugs-95691">
+											<img src="images/death_penalty.jpg" alt=""/>
+											<div>
+												<img src="volume.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										In a surprise move, the E.U. deals a blow to America's death penalty industry.
+									</p>
+									<a class="preview-link" target="_blank" href="http://www.wbez.org/episode-segments/2012-01-20/eu-ban-limits-us-access-death-penalty-drugs-95691">Click here to listen</a>
+								 </div>
+							  </li>
+						  </div>
+					  </div>
+					  <div class="gridcolumn">
+					  	  <div class="griditem" id="section7">
+							  <h3 class="accordion-header">Treating the rebels<br/>
+								<span class="subtitle">WBEZ's Worldview 02/02/2012</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://www.wbez.org/episode-segments/2012-02-02/syrian-crackdown-doctors-who-treat-protesters-become-targets-themselves-">
+											<img src="images/syrian_crackdown.jpg" alt=""/>
+											<div>
+												<img src="volume.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										In Syrian crackdown, doctors who treat protesters become political targets themselves.
+									</p>
+									<a class="preview-link" target="_blank" href="http://www.wbez.org/episode-segments/2012-02-02/syrian-crackdown-doctors-who-treat-protesters-become-targets-themselves-">Click here to listen</a>
+								 </div>
+							  </li>
+						  </div>
+						  <div class="griditem" id="section10">
+							  <h3 class="accordion-header">Turkish lawmaker aims to bring disabled out of the shadows<br/>
+								<span class="subtitle">WBEZ's Worldview 11/08/2011</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://www.wbez.org/episode-segments/2011-11-18/turkish-lawmaker-aims-bring-disabled-out-shadows-94154">
+											<img src="images/safak_pavey.jpg" alt=""/>
+											<div>
+												<img src="volume.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										Safak Pavey is a woman on a mission.
+									</p>
+									<a class="preview-link" target="_blank" href="http://www.wbez.org/episode-segments/2011-11-18/turkish-lawmaker-aims-bring-disabled-out-shadows-94154">Click here to listen</a>
+								 </div>
+							  </li>
+						  </div>
+					  </div>
+					  <div class="gridcolumn">
+					  	  <div class="griditem" id="section8">
+							  <h3 class="accordion-header">You say you want a revolution?<br/>
+								<span class="subtitle">WBEZ's Worldview 01/25/2012</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://www.wbez.org/episode-segments/2012-01-25/one-year-later-wael-ghonim-google-executive-stoked-revolution-egypt-tell">
+											<img src="images/arab_spring.jpg" alt=""/>
+											<div>
+												<img src="volume.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										One year after Tahrir Square, Wael Ghonim on the slippery nature of regime change and revolution in Egypt..
+									</p>
+									<a class="preview-link" target="_blank" href="http://www.wbez.org/episode-segments/2012-01-25/one-year-later-wael-ghonim-google-executive-stoked-revolution-egypt-tell">Click here to listen</a>
+								 </div>
+							  </li>
+						  </div>
+						  <div class="griditem" id="section11">
+							  <h3 class="accordion-header">Organ Trafficking: The Black Market<br/>
+								<span class="subtitle">WBEZ's Worldview 10/21/2011</span>
+							  </h3>
+							  <li>
+								 <div class="preview">
+								 	<div class="preview-image">
+										<a class="article-image" target="_blank" href="http://www.wbez.org/episode-segments/2011-10-21/new-book-unravels-world%E2%80%99s-black-market-human-body-parts-93344">
+											<img src="images/organ_trafficking.jpg" alt=""/>
+											<div>
+												<img src="volume.png" alt=""/>
+											</div>
+										</a>
+									</div>
+									<p>
+										Unraveling a black market that spans the globe.
+									</p>
+									<a class="preview-link" target="_blank" href="http://www.wbez.org/episode-segments/2011-10-21/new-book-unravels-world%E2%80%99s-black-market-human-body-parts-93344">Click here to listen</a>
+								 </div>
+							  </li>
+						  </div>
+					  </div>
+					  <div class="job-header" id="magazine">MAGAZINE</div>
+					  <div class="gridcolumn">
+						<div class="griditem" id="section12">
+							<h4>
+								<a class="magazine" href="pdf/AFAR_State of the Union.pdf" data-ob="lightbox">
+									State of the Union<br/>
+									<span class="subtitle">AFAR May/June 2011</span>
+									<img width="230" src="images/state_of_the_union.jpg" alt=""/>
 								</a>
-								<p><br/>
-									The mother of Hadiya Pendleton speaks out on the raw pain of losing her 15-year-old daughter, and why she's jumped headfirst into the gun control debate. 
-								</p><br/>
-								<a class="preview-link" target="_blank" href="http://chicagotonight.wttw.com/2013/02/28/hadiya-pendleton-s-mother-raises-her-voice">Click here to read more</a>
+							</h4>
+						</div>
+					  </div>
+					  <div class="gridcolumn">
+						<div class="griditem" id="section13">
+							<h4>
+								<a class="magazine" href="pdf/CLIP - Chicago Parent.pdf" data-ob="lightbox">
+									Children's Memorial revamp heralds new thinking about healing kids<br/>
+									<span class="subtitle">Chicago Parent April 2011</span>
+									<img width="230" height="190" src="images/childrens_memorial.jpg" alt=""/>
+								</a>
+							</h4>
+						</div>
+					  </div>
+				  </ul>
+				  <div class="footer">
+						<div class="footer-line">&nbsp;</div>
+						<div class="created-by"><span class="created-by">Created by Justin Cohler</span></div>
+						<div class="footer-line">&nbsp;</div>
+					</div>
+				</div>
+				<div id="photos" class="slide">
+					<!-- data-width="854" data-height="480"  -->
+					<div id="photo-gallery" class="html5gallery" 
+						data-resizemode="fit" showtitle="false" titleoverlay="false" data-height="480" data-width="854" data-autoplayvideo="true" style="display:none;">
+						<img src="images/slideshow_1.jpg" alt=""/>
+						<img src="images/slideshow_5.jpg" alt=""/>
+						<img src="images/slideshow_4.jpg" alt=""/>
+						<img src="images/slideshow_2.jpg" alt=""/>
+						<img src="images/slideshow_3.jpg" alt=""/>
+					</div>
+					<div class="footer">
+						<div class="footer-line">&nbsp;</div>
+						<div class="created-by"><span class="created-by">Created by Justin Cohler</span></div>
+						<div class="footer-line">&nbsp;</div>
+					</div>
+				</div>
+				<div id="contact-form" class="slide">
+					<form id="contact" method="post" action="js/contact.php" >
+						<fieldset>
+							<label for="name">NAME *</label>
+							<input type="text" name="name" class="required">
+							
+							<label for="email">EMAIL *</label>
+							<input type="email" name="email" class="required">
+							
+							<label for="phone">PHONE</label>
+							<input type="text" name="phone">
+							 
+							<label for="message">MESSAGE *</label>
+							<textarea name="message"></textarea>
+							
+							<div id="submit-line">
+								<input type="submit" name="submit" id="submit" value="Send Message" />
 							</div>
-						  </li>
-					  </div>
-					  <div class="griditem" id="section4">
-					  <h3 class="accordion-header">Chapter 1: Scott Walker Vs. Public Union Employees<br/>
-					  	<span class="subtitle">WTTW's Chicago Tonight 10/08/2012</span>
-					  </h3>
-					  <li>
-						 <div class="preview">
-						 	<p>
-								The man who captured Wisconsin Governor Scott Walker's now famous "divide and conquer" moment on camera.  
-						 	</p>
-						 </div>
-					  </li>
-				  </div>
-				  </div>
-				  <div class="gridcolumn">
-					  <div class="griditem" id="section2">
-						  <h3 class="accordion-header">Jesse Jackson Jr.'s Dramatic Rise and Fall<br/>
-							<span class="subtitle">WTTW's Chicago Tonight 02/21/2013</span>
-						  </h3>
-						  <li>
-							 <div class="preview">
-								<p>
-									As Jesse Jackson Jr. and his wife plead guilty to misusing campaign funds, a closer look at the one-time power couple and their place in history.
-								</p>
-							 </div>
-						  </li>
-					  </div>
-					  <div class="griditem" id="section5">
-						  <h3 class="accordion-header">National Wildlife Refuge Born in Illinois<br/>
-							<span class="subtitle">WTTW's Chicago Tonight 09/11/2012 </span>
-						  </h3>
-						  <li>
-							 <div class="preview">
-								<p>
-									The story behind Illinois' newest national wildlife refuge -- and the local environmentalists who got the federal government to take a second look at the land around them.   
-								</p>
-							 </div>
-						  </li>
-					  </div>
-				  </div>
-				  <div class="gridcolumn">
-					  <div class="griditem" id="section3">
-						  <h3 class="accordion-header">Meet the Dream Team<br/>
-							<span class="subtitle">WTTW's Chicago Tonight 10/17/2012</span>
-						  </h3>
-						  <li>
-							 <div class="preview">
-								<p>
-									Undocumented students set their sights on college -- but the path forward is a messy one. 
-								</p>
-							 </div>
-						  </li>
-					  </div>
-				  </div>				  
-				  <div class="job-header">WBEZ</div>
-			  </ul>
-  			</div>
+						</fieldset>
+					</form>
+					<div class="footer">
+						<div class="footer-line">&nbsp;</div>
+						<div class="created-by"><span class="created-by">Created by Justin Cohler</span></div>
+						<div class="footer-line">&nbsp;</div>
+					</div>
+				</div>
+			</div>
 		</div>
     </body>
 </html>

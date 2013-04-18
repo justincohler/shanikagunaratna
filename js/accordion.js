@@ -22,10 +22,13 @@ $(document).ready(function(){
 		if (!divState[$(this).attr('id')]){
 			$(this).find("li").addClass('active');
 			$(this).find("li").css("overflow", "visible");
+			
+			//HACK: necessary to ease to 100% the height of the list item
 			$(this).find("li").css("height", "100%");
 			var h = $(this).find("li").height();
 			$(this).find("li").css("height", "0px");
 			$(this).find("li").animate({height: h}, 500, "easeOutBack");
+			
 			divState[$(this).attr('id')] = true;
 		} 
 		// CLOSE THE CLICKED DIV IF ITS STATUS IS OPEN

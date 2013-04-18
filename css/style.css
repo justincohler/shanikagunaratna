@@ -5,6 +5,11 @@
 
 width:1025px;
 margin: auto;
+overflow:hidden;
+clear:both;
+position: absolute;
+left:50%;
+margin-left:-512px;
 }
 span.reference{
 	position:fixed;
@@ -23,25 +28,51 @@ span.reference a:hover{
 	color:#ddd;
 }
 h1.title{
-	margin: 50px auto 150px auto;
-	/*background:transparent url(title.png) no-repeat top left;*/
-	font-family: "wonderlust";
-	font-size: 100px;
-	color: #686868;
+	margin: 35px auto 0px auto;
+	background: url("../shanika_gunaratna_title.jpg") no-repeat top left;*/
 	width:960px;
-	height:69px;
+	height:200px;
 }
+h2.subtitle{
+	margin: 60px auto 100px 500px; 	
+	color: #686868;
+	
+}
+a, a:link, a:visited,a:hover,a:active {
+	text-decoration:none;
+	color:inherit;
+}
+/*========================================================================
+							SOCIAL MEDIA ICON STYLE
+========================================================================*/
+
+.icon{
+	overflow:hidden;
+	border: 1px solid #aaaaaa !important;
+	border-radius: 5px;
+    display: block;
+    float: right;
+	margin-right:10px;
+	margin-top:-14px;
+	height:40px;
+    top: 0;
+}
+.icon:hover{
+	box-shadow: 0px 0px 5px #aaaaaa;
+}
+	
 /*========================================================================
 							MENU STYLE
 ========================================================================*/							
 ul.sdt_menu{
-	margin-top:150px;
+	margin:150px auto 0;
 }
 ul.sdt_menu{
 	margin:0 auto;
 	padding:0;
 	list-style: none;
-	font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+	/*font-family:"Myriad Pro", "Trebuchet MS", sans-serif;*/
+	font-family: "champagne";
 	font-size:14px;
 	width:1020px;
 }
@@ -100,7 +131,11 @@ ul.sdt_menu li span.sdt_active{
 	-webkit-box-shadow:0px 0px 4px #000 inset;
 	box-shadow:0px 0px 4px #000 inset;
 }
-ul.sdt_menu li span span.sdt_link,
+ul.sdt_menu li span span.sdt_link{
+	margin-left:15px;
+	text-transform:lowercase;
+}
+
 ul.sdt_menu li span span.sdt_descr,
 ul.sdt_menu li div.sdt_box a{
 	margin-left:15px;
@@ -108,22 +143,25 @@ ul.sdt_menu li div.sdt_box a{
 	text-shadow:1px 1px 1px #000;
 }
 ul.sdt_menu li span span.sdt_link{
-	color:#fff;
+	color:#2D97CF;
 	font-size:24px;
 	float:left;
 	clear:both;
 }
 ul.sdt_menu li span span.sdt_descr{
-	color:#0B75AF;
+	color:#686868;
+	font-family: "comfortaaBold";
 	float:left;
 	clear:both;
-	width:155px; /*For dumbass IE7*/
+	width:155px;
 	font-size:10px;
 	letter-spacing:1px;
+	text-shadow:none;
 }
 ul.sdt_menu li div.sdt_box{
 	display:block;
 	position:absolute;
+	font-family: "comfortaaBold";
 	width:170px;
 	overflow:hidden;
 	height:170px;
@@ -131,6 +169,7 @@ ul.sdt_menu li div.sdt_box{
 	left:0px;
 	display:none;
 	background:#000;
+	z-index:1;
 }
 ul.sdt_menu li div.sdt_box a{
 	float:left;
@@ -145,15 +184,16 @@ ul.sdt_menu li div.sdt_box a:hover{
 	color:#fff;
 }
 .menu{
-    width:1020px;
+    width:680px;
     margin:auto;
+	margin-top:50px;
 }
 /*========================================================================
-							PORTFOLIO
+							PORTFOLIO STYLE
 ========================================================================*/
 .job-header{
 	clear:both;
-    color: #BA1820;
+    color: #0B75AF;
     font-family: "champagne";
     font-size: 35px;
     letter-spacing: 0.1em;
@@ -180,12 +220,16 @@ ul.sdt_menu li div.sdt_box a:hover{
 .accordion h3 {
     background-color: #999999;
     /*border-radius: 5px 5px 5px 5px;*/
-    box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
+	-moz-box-shadow:1px 1px 7px rgba(153, 153, 153, 0.2);
+	-webkit-box-shadow:1px 1px 7px rgba(153, 153, 153, 0.2);
+    box-shadow: 0px 2px 2px #686868;
+ 	background-color: #999999;
     color: #FFFFFF;
-    font-family: "Myriad Pro","Trebuchet MS",sans-serif;
-    font-size: 16px;
+    font-family: "comfortaa";
+    font-size: 14px;
     height: 75px;
-    margin: 0px auto -10px;
+    letter-spacing: 0.05em;
+    margin: 0 auto -10px;
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -193,40 +237,327 @@ ul.sdt_menu li div.sdt_box a:hover{
 }
 .accordion h3:hover{
 	background-color: #aaaaaa;
+	cursor:pointer;
 }
 .accordion h3 .subtitle {
-	font-family: "Myriad Pro","Trebuchet MS",sans-serif;
+    /*font-family: "Myriad Pro","Trebuchet MS",sans-serif;*/
+    font-family: "comfortaa";
     font-size: 12px;
     text-align: right;
-    color: #BA1820;
+    color: #0B75AF;
+}
+.accordion a .magazine {
+	height:275px;
+	width:250px;
+}
+.accordion a:link {
+	text-decoration:none;
+	color:inherit;
+}
+.accordion a:visited {
+	text-decoration:none;
+	color:inherit;
+}
+.accordion a:hover {
+	text-decoration:none;
+	color:inherit;
+}
+.accordion a:active {
+	text-decoration:none;
+	color:inherit;
+}
+.accordion h4{
+    background-color: #999999;
+    /*border-radius: 5px 5px 5px 5px;*/
+	-moz-box-shadow:1px 1px 7px rgba(153, 153, 153, 0.2);
+	-webkit-box-shadow:1px 1px 7px rgba(153, 153, 153, 0.2);
+    box-shadow: 0px 2px 2px #686868;
+ 	background-color: #999999;
+    color: #FFFFFF;
+    font-family: "comfortaa";
+    font-size: 14px;
+    height: 275px;
+    letter-spacing: 0.05em;
+    margin: 0 auto -10px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 250px;
+}
+.accordion h4:hover{
+	background-color: #aaaaaa;
+	cursor:pointer;
+}
+.accordion h4 .subtitle {
+    /*font-family: "Myriad Pro","Trebuchet MS",sans-serif;*/
+    font-family: "comfortaa";
+    font-size: 12px;
+    text-align: right;
+    color: #0B75AF;
+}
+
+.accordion h4 img{
+	margin:10px auto;
+}
+
+.accordion .separator {
+	height:2px;
+	width:100%;
+	background-color:#ffffff;
 }
 .accordion li {
 	clear: both;
-	background-color: #464646;
+	background-color: #999999;
 	height: 0px;
 	width: 250px;
 	overflow: hidden;
 	color: #fff;
-	font-family: "Myriad Pro","Trebuchet MS",sans-serif;
-	font-size: 20px;
+    /*font-family: "Myriad Pro","Trebuchet MS",sans-serif;*/
+    font-family: 'Noto Sans', sans-serif;
+    letter-spacing:0.15em;
 	text-decoration: none;
-	font-size: 13px;
+	font-size: 14px;
 	padding: 0 10px;
     text-align: justify;
     margin: -10px auto;
+	box-shadow: 0px 2px 2px #686868;
 }
 .accordion .preview {
 	padding:20px 10px;
+	position: relative;
+	left: 0;
+	top: 0;
 }
-.accordion .preview .article-image img{
-	margin: 10px 0;
+.accordion .preview .article-image {
+	margin: 10px auto;
+	cursor: pointer;
+}
+.accordion .preview .article-image img:first-child{
+	position: relative; 
+	top: 0;
+	left: 0;
 	clear:both;
-	height:100px;
+	width: 230px;
+}
+.accordion .preview .article-image div {
+	height: auto;
+    left: 10px;
+    opacity: 0.6;
+    position: absolute;
+    top: 20px;
+    width: 230px;
+    z-index: 2;
+}
+.accordion .preview .article-image div:hover {
+	opacity: 0.9;
+}
+.accordion .preview .article-image img:last-child{
+	position: relative;
+    width: 45px;
+    top: 60px;
+    left: 95px;
+	
+}
+.accordion .preview .preview-image {
+	width: 230px;
+	height:150px;
+	overflow:hidden;
 }
 .accordion .preview .preview-link {
 	text-align:center;
 	color:#0B75AF;
 	text-transform:uppercase;
+}
+/*========================================================================
+							SLIDER STYLE
+========================================================================*/
+#slider-wrapper
+{
+	clear:both;
+    width: 4100px;
+    
+}
+.slide
+{
+	display:inline-block;
+    width: 1025px;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+}
+/*========================================================================
+							ABOUT STYLE
+========================================================================*/
+#about-me {
+	clear: both;
+	margin: 10px auto;
+}
+#about-me #profile-picture{
+	display:block;
+	float:left;
+	width:40%;
+	margin: 0 auto;
+}
+#about-me img {
+	display:block;
+	float:left;
+	width:60%;
+	box-shadow: 0 0 15px #111111;
+	border-radius:5px;
+	margin: 20px 0 0 20px;
+}
+#about-me p {
+    color: #686868;
+    display: block;
+    float: left;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    margin-left: 190px;
+    text-align: justify;
+    width: 600px;
+}
+/*========================================================================
+							PHOTO GALLERY STYLE
+========================================================================*/
+#photo-gallery{
+	margin: 10px auto;
+}
+.html5gallery-car-1{
+	background:none !important;
+	border: 0 none !important;
+	top:0;
+	height:110px;
+}
+.html5gallery-container-1{
+	background:none !important;
+	box-shadow:none !important;
+	top:150px;
+}
+.html5gallery-title-1 {
+	overflow:visible !important;
+	width:600px;
+	margin:0 auto;
+}
+.html5gallery-title-text-1 {
+	overflow:visible !important;
+}
+/*.html5gallery-box-1 {
+	background-color: #686868;
+	border: 10px solid #686868;
+	border-radius:5px;
+}*/
+
+/*========================================================================
+							CONTACT STYLE
+========================================================================*/
+#contact-form{
+	margin: 50px 0 0 250px;
+	width: 500px;
+	border: 0 none;
+	font-family: 'Noto Sans', sans-serif;
+	text-transform: lowercase;
+	
+}
+#contact-form fieldset{
+	margin: 0 auto;
+	border: 0 none;
+	letter-spacing:0.1em;
+}
+#contact-form #contact label{
+	text-transform:lowercase;
+	clear:both;
+	display: inline-block;
+	float:left;
+	width: 35%;
+	font-size: 20px;
+	color: #0B75AF;
+}
+#contact-form #contact textarea{
+	display: inline-block;
+	float:left;
+	width:254px;
+	height:100px;
+	color: #686868;
+	font-size:14px;
+}
+#contact-form #contact input{
+	display: inline-block;
+	float:left;
+	width:250px;
+	color: #686868;
+	font-size:14px;
+	
+}
+#contact-form #contact #submit-line{
+	width:100%;
+}
+#contact-form #contact #submit{
+	display:block;
+	border: 0 none;
+    border-radius: 10px 10px 10px 10px;
+    clear: both;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    margin: 15px auto 15px 170px;
+    padding: 15px;
+    text-shadow: 1px 1px 1px #09659c;
+    text-transform: lowercase;
+	/* Safari 4-5, Chrome 1-9 */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2D97CF), to(#0b75ac)); 
+	/* Safari 5.1, Chrome 10+ */ 
+	background: -webkit-linear-gradient(top, #2D97CF, #0b75ac); 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(top, #2D97CF, #0b75ac); 
+	/* IE 10 */ 
+	background: -ms-linear-gradient(top, #2D97CF, #0b75ac); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(top, #2D97CF, #0b75ac);
+}
+
+#contact-form #contact #submit:hover, #contact-form #contact #submit:active{
+    text-shadow: 1px 1px 1px #000;
+	/* Safari 4-5, Chrome 1-9 */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0b75ac), to(#2D97CF)); 
+	/* Safari 5.1, Chrome 10+ */ 
+	background: -webkit-linear-gradient(top, #0b75ac, #2D97CF); 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(top, #0b75ac, #2D97CF); 
+	/* IE 10 */ 
+	background: -ms-linear-gradient(top, #0b75ac, #2D97CF); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(top, #0b75ac, #2D97CF);
+}
+
+/*========================================================================
+							FOOTER STYLE
+========================================================================*/
+.footer {
+	text-transform: none;
+	position:relative;
+	width:300px;
+	margin: auto;
+	color:#686868;
+	display:block;
+	clear:both;
+	padding-top:150px;
+}
+.footer span {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px !important;
+    letter-spacing: 0.05em;
+    margin: 10px auto 10px 60px;
+    padding: 10px 0;
+}
+.footer .footer-line{
+	clear:both;
+	background-color: #686868;
+	height:1px;
+	width:100%;
+}
+.created-by {
+	margin:5px auto;
 }
 /*========================================================================
 							FONT STYLE
@@ -246,4 +577,24 @@ ul.sdt_menu li div.sdt_box a:hover{
 @font-face {
 	font-family: champagne;
 	src: url("fonts/Champagne & Limousines.ttf");
+}
+@font-face {
+	font-family: champagneBold;
+	src: url("fonts/Champagne & Limousines Bold.ttf");
+}
+@font-face {
+	font-family: neou;
+	src: url("fonts/Neou-Thin.ttf");
+}
+@font-face {
+	font-family: franklinGothic;
+	src: url("fonts/Franklin Gothic Book.ttf");
+}
+@font-face {
+	font-family: comfortaa;
+	src: url("fonts/Comfortaa/Comfortaa-Light.ttf");
+}
+@font-face {
+	font-family: comfortaaBold;
+	src: url("fonts/Comfortaa/Comfortaa-Bold.ttf");
 }
